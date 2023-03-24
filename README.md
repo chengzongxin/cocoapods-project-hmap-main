@@ -1,7 +1,7 @@
 # cocoapods-project-hmap
 
 ```
-gem install specific_install
+sudo gem install specific_install
 sudo gem specific_install -l https://github.com/chengzongxin/cocoapods-project-hmap-main.git
 ```
 
