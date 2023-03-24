@@ -7,6 +7,7 @@ module ProjectHeaderMap
   Pod::HooksManager.register('cocoapods-project-hmap', :post_install) do |post_context|
 
     p "hmap from git=> https://github.com/chengzongxin/cocoapods-project-hmap-main"
+    p "2023-03-24 19:23:14 不清空Header—Search-Path"
 
     generate_type = $strict_mode ? HmapGenerator::ANGLE_BRACKET : HmapGenerator::BOTH
     post_context.aggregate_targets.each do |one|

@@ -29,11 +29,12 @@ module Xcodeproj
       # 1. It must be at the ${PODS_ROOT} directory
       # 2. It has generated hmap
       ret = false
-      if search_path.include?('${PODS_ROOT}/Headers')
-        if prebuilt_hmap_target_names
-           ret = prebuilt_hmap_target_names.select { |name| search_path.include?(name) }.empty? == false
-        end
-      end
+      # 这里现在无论何时都返回，不删除头文件header——search——path，否则库文件读取不出来
+      # if search_path.include?('${PODS_ROOT}/Headers')
+      #   if prebuilt_hmap_target_names
+      #      ret = prebuilt_hmap_target_names.select { |name| search_path.include?(name) }.empty? == false
+      #   end
+      # end
       ret
     end
     def remove_system_option_in_other_cflags(prebuilt_hmap_target_names=nil)
