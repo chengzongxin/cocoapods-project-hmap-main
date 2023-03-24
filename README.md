@@ -1,6 +1,9 @@
 # cocoapods-project-hmap
 
-`sudo gem install cocoapods-project-hmap -s https://github.com/chengzongxin/cocoapods-project-hmap-main`
+```
+gem install specific_install
+sudo gem specific_install -l https://github.com/chengzongxin/cocoapods-project-hmap-main.git
+```
 
 此插件思路来源于[《一款可以让大型iOS工程编译速度提升50%的工具》](https://tech.meituan.com/2021/02/25/cocoapods-hmap-prebuilt.html)。通过使用 header map (以下简称 hmap ) 代替文件路径搜索优化预处理阶段中头文件搜索的性能实现编译速度提升。
 
