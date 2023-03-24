@@ -1,0 +1,55 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+# 预编译静态库插件，如果没有安装运行 `gem install cocoapods-ppbuild` 安装一下
+# 1. 使用静态库编译：
+#      use_frameworks! :linkage => :static
+#      use_static_binary!
+#    使用动态库编译：
+#      use_frameworks!
+#      use_dynamic_binary!
+# 2. 如果某个库不想使用预编译加参数 :ppbuild => false
+# 3. 可以设置编译参数，默认不设置 例如：
+#    set_custom_xcodebuild_options_for_prebuilt_frameworks :simulator => "ARCHS=$(ARCHS_STANDARD)"
+# plugin 'cocoapods-ppbuild'
+# 静态库预编译编译
+# use_frameworks! :linkage => :static
+# use_static_binary!
+# 动态库预编译
+# use_frameworks!
+# use_dynamic_binary!
+
+plugin 'cocoapods-project-hmap'
+# set_hmap_black_pod_list(['AFNetworking','ReactiveObjC','MJRefresh','YYWebImage','ChainUIKit'])
+# turn_prebuilt_hmap_off_for_pod_targets
+target 'Demo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+
+  # Pods for Demo
+
+  pod 'AFNetworking'
+  # pod 'Masonry'
+  # pod 'ReactiveObjC'
+  # pod 'MJRefresh'
+  # pod 'YYWebImage'
+  # pod 'ChainUIKit'
+
+end
+
+post_install do |installer_representation|
+    installer_representation.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = 'YES'
+            
+              config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+              config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+              config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+              config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+
+              
+        end
+    end
+end
+
