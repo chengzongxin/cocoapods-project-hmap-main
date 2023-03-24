@@ -5,6 +5,9 @@ require 'cocoapods-project-hmap/post_install_hook_context'
 
 module ProjectHeaderMap
   Pod::HooksManager.register('cocoapods-project-hmap', :post_install) do |post_context|
+
+    p "hmap from git=> https://github.com/chengzongxin/cocoapods-project-hmap-main"
+
     generate_type = $strict_mode ? HmapGenerator::ANGLE_BRACKET : HmapGenerator::BOTH
     post_context.aggregate_targets.each do |one|
       pods_hmap = HmapGenerator.new
