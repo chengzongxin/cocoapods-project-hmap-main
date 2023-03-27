@@ -16,7 +16,8 @@ module Pod
             context
           end
         end
-      elsif version < Gem::Version.new('1.10.0')
+        #fix  < 1.12.0 generate 3 args
+      elsif version < Gem::Version.new('1.12.0')
         # Method `generate` has three args
         class << self
           alias old_generate generate
