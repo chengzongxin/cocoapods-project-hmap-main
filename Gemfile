@@ -12,4 +12,5 @@ group :development do
   gem 'prettybacon'
   gem 'ruby-debug-ide'
   gem 'debase', '0.2.5.beta2'
+  gem 'cocoapods-hmap-prebuilt'
 end

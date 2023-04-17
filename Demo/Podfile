@@ -21,14 +21,15 @@ source 'https://github.com/CocoaPods/Specs.git'
 # use_frameworks!
 # use_dynamic_binary!
 
-plugin 'cocoapods-project-hmap'
+#plugin 'cocoapods-project-hmap'
+
 # set_hmap_black_pod_list(['AFNetworking','ReactiveObjC','MJRefresh','YYWebImage','ChainUIKit'])
 # turn_prebuilt_hmap_off_for_pod_targets
 target 'Demo' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   # Pods for Demo
-
+  plugin 'cocoapods-hmap-prebuilt'
   pod 'AFNetworking'
   # pod 'Masonry'
   # pod 'ReactiveObjC'

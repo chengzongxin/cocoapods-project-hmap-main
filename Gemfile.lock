@@ -51,6 +51,7 @@ GEM
       typhoeus (~> 1.0)
     cocoapods-deintegrate (1.0.5)
     cocoapods-downloader (1.6.3)
+    cocoapods-hmap-prebuilt (0.0.7)
     cocoapods-plugins (1.0.0)
       nap
     cocoapods-search (1.0.1)
@@ -111,6 +112,7 @@ DEPENDENCIES
   bacon
   bundler
   cocoapods
+  cocoapods-hmap-prebuilt
   cocoapods-project-hmap!
   debase (= 0.2.5.beta2)
   mocha

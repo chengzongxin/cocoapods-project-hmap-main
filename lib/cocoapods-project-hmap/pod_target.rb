@@ -37,7 +37,7 @@ module Pod
       if build_settings.instance_of?(Hash)
         build_settings.each do |config_name, setting|
           config_file = setting.xcconfig
-          config_file.reset_header_search_with_relative_hmap_path(hmap_path, @prebuilt_hmap_target_names.uniq)
+          config_file.reset_header_search_with_relative_hmap_path(hmap_path, @prebuilt_hmap_target_names.uniq unless @prebuilt_hmap_target_names.nil?)
           # https://github.com/CocoaPods/CocoaPods/issues/1216
           # just turn off private xcconfig's USE_HEADERMAP flag
           config_file.set_use_hmap(false)
